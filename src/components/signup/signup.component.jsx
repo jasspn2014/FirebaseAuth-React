@@ -13,20 +13,23 @@ class SignUp extends React.Component {
     };
   }
 
-  handleChange = (event) => {};
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
 
   handleSubmit = (event) => {
-      event.preventDefault();
+    event.preventDefault();
   };
 
   render() {
     return (
       <div className="sign-up">
         <form onClick={this.handleSubmit}>
-          <FormInput label="Display Name" name="displayName" type="text" onChange={this.handleChange} />
-          <FormInput label="Email" name="email" type="email" onChange={this.handleChange} />
-          <FormInput label="Password" name="password" type="password" onChange={this.handleChange} />
-          <FormInput label="Confirm Password" name="confirmPassword" type="password" onChange={this.handleChange} />
+          <FormInput label="Display Name" name="displayName" type="text" handleChange={this.handleChange} />
+          <FormInput label="Email" name="email" type="email" handleChange={this.handleChange} />
+          <FormInput label="Password" name="password" type="password" handleChange={this.handleChange} />
+          <FormInput label="Confirm Password" name="confirmPassword" type="password" handleChange={this.handleChange} />
           <CustomButton type="submit">Sign Up</CustomButton>
         </form>
       </div>
