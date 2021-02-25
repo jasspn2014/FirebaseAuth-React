@@ -1,0 +1,37 @@
+$purple: #512da8;
+$blue: #1976d2;
+$l_orange: #fbc02d;
+$brick: crimson;
+
+@mixin buttonBG($bg) {
+  border: 2px solid $bg;
+  color: $bg;
+  &:hover {
+    background-color: $bg;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.skewBtn {
+  width: 380px;
+  height: 80px;
+  margin-top: 50px;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  transition: 0.5s;
+  font-size: 24px;
+  border-radius: 5px;
+  font-family: "Lato", sans-serif;
+  
+  &:hover {
+    border: none;
+    color: white;
+    font-size: 28px;
+    transform: scale(1.1);
+  }
+}
+
+.brick {
+  @include buttonBG($brick);
+}
